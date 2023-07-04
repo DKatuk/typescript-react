@@ -1,4 +1,5 @@
 import "./App.css";
+import Button from "./components/Button";
 import ChildComponent from "./components/ChildComponent";
 import Employees from "./components/Employees";
 import Greet from "./components/Greet";
@@ -28,6 +29,13 @@ function App() {
         <Layout>
           <ChildComponent />
         </Layout>
+      </div>
+      <div>
+        <Button
+          handleClick={(e, id) =>
+            console.log("button clicked event:", e, "id:", id)
+          }
+        />
       </div>
     </div>
   );
