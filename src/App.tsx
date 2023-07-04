@@ -3,6 +3,7 @@ import Button from "./components/Button";
 import ChildComponent from "./components/ChildComponent";
 import Employees from "./components/Employees";
 import Greet from "./components/Greet";
+import Input from "./components/Input";
 import Layout from "./components/Layout";
 import Status from "./components/Status";
 
@@ -30,12 +31,20 @@ function App() {
           <ChildComponent />
         </Layout>
       </div>
-      <div>
+      <div
+        style={{
+          display: "flex",
+          width: "100%",
+          justifyContent: "center",
+          gap: "15px",
+        }}
+      >
         <Button
           handleClick={(e, id) =>
             console.log("button clicked event:", e, "id:", id)
           }
         />
+        <Input />
       </div>
     </div>
   );
