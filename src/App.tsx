@@ -17,6 +17,8 @@ function App() {
     { first: "Klark", last: "Kent" },
     { first: "Princess", last: "Diana" },
   ];
+
+  
   return (
     <div className="App">
       {/**If you forget to pass one prop, TypeScript will complain :) */}
@@ -44,7 +46,7 @@ function App() {
             console.log("button clicked event:", e, "id:", id)
           }
         />
-        <Input />
+        <Input styles={{ border: "1px solid green", padding: "1rem" }} />
       </div>
     </div>
   );
