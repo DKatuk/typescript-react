@@ -1,24 +1,34 @@
-import React from 'react';
-import logo from './logo.svg';
-import './App.css';
+import "./App.css";
+import ChildComponent from "./components/ChildComponent";
+import Employees from "./components/Employees";
+import Greet from "./components/Greet";
+import Layout from "./components/Layout";
+import Status from "./components/Status";
 
 function App() {
+  //you don't need to define type of this array of objects
+  const namesList = [
+    {
+      first: "Bruce",
+      last: "Wayne",
+    },
+    { first: "Klark", last: "Kent" },
+    { first: "Princess", last: "Diana" },
+  ];
   return (
     <div className="App">
-      <header className="App-header">
-        <img src={logo} className="App-logo" alt="logo" />
-        <p>
-          Edit <code>src/App.tsx</code> and save to reload.
-        </p>
-        <a
-          className="App-link"
-          href="https://reactjs.org"
-          target="_blank"
-          rel="noopener noreferrer"
-        >
-          Learn React
-        </a>
-      </header>
+      {/**If you forget to pass one prop, TypeScript will complain :) */}
+      <Greet userName="Dilara" isLoggedIn={true} />
+      <div style={{ margin: "10px" }}>
+        <Employees names={namesList} />
+      </div>
+      <div style={{ margin: "10px" }}>
+        <Status status={"error"} />
+        {/**Shows you the possible string options as props, because we defined the type as union of string literals. */}
+        <Layout>
+          <ChildComponent />
+        </Layout>
+      </div>
     </div>
   );
 }
