@@ -1,12 +1,5 @@
 import React from "react";
-
-//always define prop types of the component before hand.
-type PersonListProps = { 
-  names: {
-    first: string;
-    last: string;
-  }[];
-}; // array of objects, but this object has a type with two fields : first and last, which are both string.
+import { PersonListProps } from "./Employees.types";
 
 function Employees({ names }: PersonListProps) {
   return (
