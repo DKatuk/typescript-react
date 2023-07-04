@@ -6,6 +6,8 @@ import Greet from "./components/Greet";
 import Input from "./components/Input";
 import Layout from "./components/Layout";
 import Status from "./components/Status";
+import LoggedIn from "./components/state/LoggedIn";
+import User from "./components/state/User";
 
 function App() {
   //you don't need to define type of this array of objects
@@ -18,7 +20,6 @@ function App() {
     { first: "Princess", last: "Diana" },
   ];
 
-  
   return (
     <div className="App">
       {/**If you forget to pass one prop, TypeScript will complain :) */}
@@ -47,6 +48,14 @@ function App() {
           }
         />
         <Input styles={{ border: "1px solid green", padding: "1rem" }} />
+      </div>
+      <div style={{ marginTop: "3rem" }}>
+        UseState Types - Type Inference In Action
+        <LoggedIn />
+      </div>
+      <div style={{ marginTop: "3rem" }}>
+        UseState Types - Explicit useState types
+        <User />
       </div>
     </div>
   );
